@@ -42,11 +42,12 @@ main {
     display: flex;
 }
 .sidebar {
-    margin-right: 25px;
-    padding: 10px;
-}
+    margin-right: 0px;
+    justify-content: center;
+    align-items: center;
+  }
 .sidebar-img {
-    width: 600px;
+    width: 100%;
 }
 .content {
     flex: 1;
