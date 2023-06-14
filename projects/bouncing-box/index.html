@@ -8,14 +8,14 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(118, 255, 106);
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left: 100px;  /* <--- Change me! */
 		}
 		.board{
 			height: 100vh;
@@ -29,8 +29,9 @@
 	<div class="box">?</div>
 
 	<script>
-		(function(){
-			'use strict'
+		(function(){} )
+			
+			// 'use strict'
 			/* global jQuery */
 
 			//////////////////////////////////////////////////////////////////
@@ -62,30 +63,40 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+		   var positionX = 0
+           var points = 0
+		   var speed = 10
 
-			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
 			function update() {
-				
-
-			};
-
+				     /* Your Code to Increase positionX by 10 HERE*/
+					 positionX = positionX + speed 
+				     moveBoxTo(positionX)
+                     if (positionX > boardwidth) {
+						speed = -speed;
+					};
+			      	if (positionX < 0) {
+				 		 speed = speed * -1
+					}
+			}
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
-
+				positionX = 0
+				speed = speed + 3
+				points = points + 1
+				changeBoxText(points);
+                
 
 			};
-		})();
+			})();
 	</script>
 </body>
 </html>
