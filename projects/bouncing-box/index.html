@@ -83,20 +83,25 @@
 				 		 speed = speed * -1
 					}
 			}
+			
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 0
-				speed = speed + 3
-				points = points + 1
+				positionX = 0;
+				points++
+				if (speed > 0) {
+					speed = speed + 3
+				} else if (speed < 0) {
+					speed = speed - 3
+				}
 				changeBoxText(points);
                 
 
 			};
-			})();
+		})();
 	</script>
 </body>
 </html>
